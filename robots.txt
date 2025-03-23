@@ -1,0 +1,3 @@
+User-agent: Rambler Bot,BingBot,Slurp
+Crawl-delay: 1
+Host: csem.su
