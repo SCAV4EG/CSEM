@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /WEBSITE
+Sitemap: https://csem.su/sitemap.xml
