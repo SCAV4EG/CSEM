@@ -78,25 +78,29 @@
 
     <footer>© CSEM, 2025</footer>
 
-    <script>
-        function startCountdown(duration) {
-            let timer = duration, hours, minutes, seconds;
-            setInterval(function () {
-                hours = Math.floor(timer / 3600);
-                minutes = Math.floor((timer % 3600) / 60);
-                seconds = timer % 60;
+<script>
+    function startCountdown(duration) {
+        let timer = duration, hours, minutes, seconds;
+        const countdownElement = document.getElementById("countdown");
 
-                document.getElementById("countdown").textContent = 
-                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        const interval = setInterval(function () {
+            hours = Math.floor(timer / 3600);
+            minutes = Math.floor((timer % 3600) / 60);
+            seconds = timer % 60;
 
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
-        }
+            countdownElement.textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
-        startCountdown(30); // Таймер на 1 час
-    </script>
+            if (--timer < 0) {
+                clearInterval(interval); // Останавливаем таймер после завершения
+                countdownElement.textContent = "00:00:00"; // После завершения показываем 00:00:00
+            }
+        }, 1000);
+    }
+
+    startCountdown(30); // Запуск таймера на 30 секунд
+</script>
+
 
 
 
