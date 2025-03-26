@@ -5,19 +5,4 @@
         <lastmod>2025-03-23</lastmod>
         <priority>1.0</priority>
     </url>
-    <url>
-        <loc>https://csem.su/about</loc>
-        <lastmod>2025-03-23</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://csem.su/projects</loc>
-        <lastmod>2025-03-23</lastmod>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://csem.su/contact</loc>
-        <lastmod>2025-03-23</lastmod>
-        <priority>0.6</priority>
-    </url>
 </urlset>
