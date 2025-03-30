@@ -1,118 +1,138 @@
-<html lang="ru"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт в разработке | CSEM</title>
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="refresh" content="30"> <!-- Автообновление через 30 секунд -->
-    <meta http-equiv="Retry-After" content="3600"> <!-- Поисковикам говорит вернуться через 1 час -->
-    <link rel="icon" type="image/png" href="images/ERROR.png">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');* {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>521 | Under Construction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/ERROR.png">
+  <style>
+    @keyframes glitch {
+      0% { text-shadow: 4px 4px #f96d00, -4px -4px #ff9a3c; }
+      25% { text-shadow: -4px -4px #f96d00, 4px 4px #ff9a3c; }
+      50% { text-shadow: 4px -4px #f96d00, -4px 4px #ff9a3c; }
+      75% { text-shadow: -4px 4px #f96d00, 4px -4px #ff9a3c; }
+      100% { text-shadow: 4px 4px #f96d00, -4px -4px #ff9a3c; }
     }
 
+    /* Фон с полосками */
     body {
-        font-family: 'Orbitron', sans-serif;
-        background: linear-gradient(45deg, #000, #ff4500, #000);
-        background-size: 400% 400%;
-        animation: gradientBG 10s ease infinite;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-        flex-direction: column;
+      font-family: 'Orbitron', sans-serif;
+      background: repeating-linear-gradient(
+        45deg,
+        #000 0%, #000 8%, #f96d00 8%, #f96d00 16%,
+        #000 16%, #000 24%, #f96d00 24%, #f96d00 32%,
+        #000 32%, #000 40%, #f96d00 40%, #f96d00 48%,
+        #000 48%, #000 56%, #f96d00 56%, #f96d00 64%,
+        #000 64%, #000 72%, #f96d00 72%, #f96d00 80%,
+        #000 80%, #000 88%, #f96d00 88%, #f96d00 96%,
+        #000 96%
+      );
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+    /* Бегущая строка с логотипом */
+    .marquee-container {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee {
+      display: inline-block;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff9a3c;
+      animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
+    .marquee img {
+      height: 50px;
+      vertical-align: middle;
+      margin-right: 20px;
+    }
+
+    .container {
+      z-index: 2;
+      padding: 0 5%;
     }
 
     h1 {
-        font-size: 4rem;
-        text-shadow: 2px 2px 10px rgba(255, 69, 0, 0.8);
-        animation: glitch 1s infinite alternate;
-    }
-
-    @keyframes glitch {
-        0% { text-shadow: 3px 3px #ff4500, -3px -3px #ff6347; }
-        50% { text-shadow: -3px -3px #ff4500, 3px 3px #ff6347; }
-        100% { text-shadow: 3px -3px #ff4500, -3px 3px #ff6347; }
+      font-size: 25vw;
+      margin: 0;
+      animation: glitch 1s infinite alternate;
+      letter-spacing: 1vw;
     }
 
     p {
-        font-size: 1.5rem;
-        margin-top: 15px;
-        color: #ffcccb;
+      font-size: 5vw;
+      color: #ff9a3c;
+      margin-top: 5%;
     }
 
-    .countdown {
-        font-size: 2rem;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background: rgba(255, 69, 0, 0.7);
-        border-radius: 10px;
+    .clock {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 3rem;
+      background: #000;
+      color: #f96d00;
+      border: 5px solid #f96d00;
+      padding: 10px 40px;
+      border-radius: 8px;
+      letter-spacing: 5px;
+      font-family: 'Orbitron', sans-serif;
+      width: 350px;
+      text-align: center;
+      box-sizing: border-box;
     }
 
-    footer {
-        position: absolute;
-        bottom: 10px;
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.5);
+    @media (min-width: 768px) {
+      h1 { font-size: 20rem; }
+      p { font-size: 2.5rem; }
+      .clock { font-size: 3rem; padding: 10px 20px; }
     }
-</style>
-
+  </style>
 </head>
-<body><h1>Сайт временно недоступен</h1>
-<p>Мы проводим техническое обслуживание. Пожалуйста, попробуйте позже.</p>
+<body>
+  <div class="marquee-container">
+    <div class="marquee">
+      <img src="images/logo_enhanced.png" alt="CSEM Logo"> SERVER UNDER CONSTRUCTION - PLEASE CHECK BACK LATER 
+    </div>
+  </div>
 
-<div class="countdown" id="countdown">00:00:30</div>
+  <div class="container">
+    <h1>521</h1>
+    <p>Sorry, the server is offline and under construction.</p>
+  </div>
 
-<footer>© CSEM, 2025</footer>
+  <div class="clock" id="clock">21:53:08</div>
 
-<script>
-    function startCountdown(duration) {
-        let timer = duration, hours, minutes, seconds;
-        let countdownElement = document.getElementById("countdown");
-        
-        let interval = setInterval(function () {
-            hours = Math.floor(timer / 3600);
-            minutes = Math.floor((timer % 3600) / 60);
-            seconds = timer % 60;
-
-            countdownElement.textContent = 
-                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-            if (--timer < 0) {
-                clearInterval(interval);
-            }
-        }, 1000);
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
     }
-
-    startCountdown(30); 
-</script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(100663543, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/100663543" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-</body></html>
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
